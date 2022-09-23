@@ -41,20 +41,20 @@ class OrderService {
 
     private async checkOrder(id: string): Promise<void> {
         const consult: IOrderResponse | null = await OrderRepository.consultById(id);
-        if (!consult) throw new Error('Pedido Inexistente');
-        if (!consult.emAndamento) throw new Error('Pedido Já Entregue');
+        if (!consult) throw new Error('Non-existent Order');
+        if (consult.delivered) throw new Error('Order Delivered');
     }
 
     private async buildOrder(payload: IOrderRequest): Promise<IOrder> {
-        const cardapio: IMenuResponse | null = await MenuRepository.consultById(payload.idCardapio);
+        const menu: IMenuResponse | null = await MenuRepository.consultById(payload.idMenu);
 
-        if (!cardapio) throw new Error('Cardapio Inexistente');
+        if (!menu) throw new Error('Non-existent Menu');
 
         const order: IOrder = {
             ...payload,
-            valorTotal: payload.quantidade * cardapio!.valorUnitario,
-            tempoEspera: payload.quantidade * cardapio!.tempoPreparoUnitario,
-            emAndamento: true,
+            totalPrice: payload.quantity * menu!.unitPrice,
+            waitingTime: payload.quantity * menu!.unitPreparationTime,
+            delivered: false,
         };
 
         return order;

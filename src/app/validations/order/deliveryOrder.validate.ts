@@ -1,13 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 
-const mongoIdLength: number = 24;
-const quuantityMinimunValue = 1;
-
 export default async (req: Request, res: Response, next: NextFunction) => {
     try {
         const schema = Joi.object({
-            emAndamento: Joi.boolean().not().empty().required(),
+            delivered: Joi.boolean().not().empty().required(),
         });
 
         const { error } = await schema.validate(req.body, { abortEarly: true });

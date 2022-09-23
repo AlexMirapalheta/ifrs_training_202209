@@ -11,7 +11,7 @@ class OrderController {
             console.log('Payload:', JSON.stringify(payload));
             console.log('Response:', JSON.stringify(result));
 
-            return res.status(200).json(result);
+            return res.status(201).json(result);
         } catch (error) {
             console.error('\nOrderController', 'create');
             console.error('Error:', JSON.stringify(error));

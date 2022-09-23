@@ -4,9 +4,9 @@ import Joi from 'joi';
 export default async (req: Request, res: Response, next: NextFunction) => {
     try {
         const schema = Joi.object({
-            nomePrato: Joi.string().not().empty().required(),
-            valorUnitario: Joi.number().min(1).required(),
-            tempoPreparoUnitario: Joi.number().min(1).required(),
+            foodName: Joi.string().not().empty().required(),
+            unitPrice: Joi.number().min(1).required(),
+            unitPreparationTime: Joi.number().min(1).required(),
         });
 
         const { error } = await schema.validate(req.body, { abortEarly: true });

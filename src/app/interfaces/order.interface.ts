@@ -1,14 +1,14 @@
 import { Types } from 'mongoose';
 
 export interface IOrderRequest {
-    idCardapio: string;
-    quantidade: number;
+    idMenu: string;
+    quantity: number;
 }
 
 export interface IOrder extends IOrderRequest {
-    valorTotal: number;
-    tempoEspera: number;
-    emAndamento: boolean;
+    totalPrice: number;
+    waitingTime: number;
+    delivered: boolean;
 }
 
 export interface IOrderResponse extends IOrder {
@@ -22,7 +22,7 @@ export interface IOrderUpdate {
 }
 
 export interface IDelivery {
-    emAndamento: boolean;
+    delivered: boolean;
 }
 
 export interface IOrderDelivery {

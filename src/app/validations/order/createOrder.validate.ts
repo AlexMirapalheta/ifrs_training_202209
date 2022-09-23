@@ -7,8 +7,8 @@ const quuantityMinimunValue = 1;
 export default async (req: Request, res: Response, next: NextFunction) => {
     try {
         const schema = Joi.object({
-            idCardapio: Joi.string().not().empty().length(mongoIdLength).required(),
-            quantidade: Joi.number().min(quuantityMinimunValue).required(),
+            idMenu: Joi.string().not().empty().length(mongoIdLength).required(),
+            quantity: Joi.number().min(quuantityMinimunValue).required(),
         });
 
         const { error } = await schema.validate(req.body, { abortEarly: true });

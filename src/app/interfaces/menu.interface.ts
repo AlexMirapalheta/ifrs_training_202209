@@ -1,12 +1,12 @@
-import { Types } from "mongoose";
+import { Types } from 'mongoose';
 
 export interface IMenu {
-  nomePrato: string;
-  valorUnitario: number;
-  tempoPreparoUnitario: number;
+    foodName: string;
+    unitPrice: number;
+    unitPreparationTime: number;
 }
 
 export interface IMenuResponse extends IMenu {
-  _id: Types.ObjectId;
-  _v?: number;
+    _id: Types.ObjectId;
+    _v?: number;
 }
