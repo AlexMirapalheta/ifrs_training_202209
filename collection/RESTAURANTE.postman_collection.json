@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "62438c5a-312f-4432-9673-43d52f03348f",
+		"name": "RESTAURANTE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17551838"
+	},
+	"item": [
+		{
+			"name": "MENU",
+			"item": [
+				{
+					"name": "CREATE CARDAPIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodName\": \"A La Minuta de Filé de Frango\",\r\n    \"unitPrice\": 25.00,\r\n    \"unitPreparationTime\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3001/menu"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"foodName\": \"A La Minuta de Filé de Mignon\",\r\n    \"unitPrice\": 30.00,\r\n    \"unitPreparationTime\": 12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3001/menu"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-Qb7vQ/x+qxjlloLI/evp9ECV3+g\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:21:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"foodName\": \"A La Minuta de Filé de Mignon\",\n    \"unitPrice\": 30,\n    \"unitPreparationTime\": 12,\n    \"_id\": \"632e07309761a56f08c12839\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "CONSULT CARDAPIO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3001/menu"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:3001/menu"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-M6qyEfJf7rdjD5VhDdufYj92NGM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:23:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"632e07309761a56f08c12839\",\n        \"foodName\": \"A La Minuta de Filé de Mignon\",\n        \"unitPrice\": 30,\n        \"unitPreparationTime\": 12,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"632e07bd9761a56f08c1283c\",\n        \"foodName\": \"A La Minuta de Filé de Frango\",\n        \"unitPrice\": 25,\n        \"unitPreparationTime\": 10,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ORDER",
+			"item": [
+				{
+					"name": "CRIAR PEDIDO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMenu\": \"632e0a78174679ed434fb71d\",\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3001/order"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idMenu\": \"632e07309761a56f08c12839\",\r\n    \"quantity\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3001/order"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e-du62/UHqoO2WWGqxRGNfJKmU3pc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:27:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idMenu\": \"632e07309761a56f08c12839\",\n    \"quantity\": 3,\n    \"totalPrice\": 90,\n    \"waitingTime\": 36,\n    \"delivered\": false,\n    \"_id\": \"632e089fb86eaae81b92b98f\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "VISUALIZAR PEDIDOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "idCardapio",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "quantidade",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "valorTotal",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "tempoEspera",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "emAndamento",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"order"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "idCardapio",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "quantidade",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "valorTotal",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "tempoEspera",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "emAndamento",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"90-TR1yGCBR30frVo8hDQHxSckklLY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:27:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"632e089fb86eaae81b92b98f\",\n        \"idMenu\": \"632e07309761a56f08c12839\",\n        \"quantity\": 3,\n        \"totalPrice\": 90,\n        \"waitingTime\": 36,\n        \"delivered\": false,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ALTERAR PEDIDO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMenu\": \"632e07309761a56f08c12839\",\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/order/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"order",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "632e0b48174679ed434fb721"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idMenu\": \"632e07309761a56f08c12839\",\r\n    \"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/order/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "632e089fb86eaae81b92b98f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e-OR4nt2n12/I6fRL/Z0w3JbP/Ho0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:29:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"632e089fb86eaae81b92b98f\",\n    \"idMenu\": \"632e07309761a56f08c12839\",\n    \"quantity\": 2,\n    \"totalPrice\": 60,\n    \"waitingTime\": 24,\n    \"delivered\": false,\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "ALTERAR ENTREGA",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"delivered\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/order/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"order",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "632e0b48174679ed434fb721"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"delivered\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/order/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "632e089fb86eaae81b92b98f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8d-8rg2LYvXfSLwul4BGboQFVW9zWY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:30:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"632e089fb86eaae81b92b98f\",\n    \"idMenu\": \"632e07309761a56f08c12839\",\n    \"quantity\": 2,\n    \"totalPrice\": 60,\n    \"waitingTime\": 24,\n    \"delivered\": true,\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "CANCELAR PEDIDO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/order/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"order",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "632e0b9e174679ed434fb729"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/order/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "632e09d4621cf1d488e3d57f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e-IXuoZx3XrQsgR40nNgJKTAAqFNs\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 19:32:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"632e09d4621cf1d488e3d57f\",\n    \"idMenu\": \"632e07bd9761a56f08c1283c\",\n    \"quantity\": 1,\n    \"totalPrice\": 25,\n    \"waitingTime\": 10,\n    \"delivered\": false,\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
